@@ -1,25 +1,26 @@
 # UGA Garage Door Repair LLC website
 
-A standalone website built with HTML, CSS, and plain JavaScript. No React, Angular, package installation, build step, or API key is required.
+A standalone website built with HTML, CSS, and plain JavaScript, served by a small Node.js static server. No framework, dependencies, build step, or API key is required.
 
 ## Files
 
 - `index.html`: page content, contact information, form, and photo viewer.
 - `styles.css`: colors, typography, layout, mobile styles, and dialogs.
 - `script.js`: service cards, estimate summary, SMS link, clipboard, and gallery.
+- `server.js`: dependency-free Node.js static web server.
+- `package.json`: `npm start` command for the server.
 - `assets/`: seven retouched project photos. No original-photo files are included.
 
 ## Open the website
 
-1. Extract this ZIP and keep the folder structure intact.
-2. Open `index.html` in a modern web browser for a quick preview.
-3. For a local web preview, open a terminal in this folder and run:
+1. Install Node.js if it is not already installed.
+2. Open a terminal in this folder and run:
 
 ```sh
-python3 -m http.server 8000
+npm start
 ```
 
-On Windows, use `py -m http.server 8000` if needed. Open `http://localhost:8000`.
+Open `http://localhost:8000`. To use a different port, set the `PORT` environment variable before starting the server.
 Clipboard features may require localhost or HTTPS.
 
 ## Publish
