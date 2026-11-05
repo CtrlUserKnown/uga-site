@@ -12,3 +12,26 @@
 .hours-label{font-size:11px;color:#657569}
 .service-hours b{font-size:13px}
 @media(max-width:760px){nav{flex-wrap:wrap}.links{width:100%;justify-content:space-between;gap:10px}.links>a{display:none}.service-hours{padding-left:0;border-left:0}.links .btn{padding:10px 12px}}
+
+/* Small-screen and cross-browser refinements for iOS, Android, Safari, and Firefox. */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+button, a, input, select, textarea{-webkit-tap-highlight-color:transparent}
+.actions{flex-wrap:wrap}
+.service:hover,.project img{transition-duration:.2s}
+dialog{overflow:auto;-webkit-overflow-scrolling:touch}
+dialog::backdrop{-webkit-backdrop-filter:blur(4px)}
+@media(max-width:760px){
+  .business-hero{font-size:clamp(38px,11vw,64px)}
+  .actions>.btn{min-height:44px}
+  .links .btn{min-height:44px}
+  .mobile-call{bottom:calc(16px + env(safe-area-inset-bottom, 0px));right:calc(18px + env(safe-area-inset-right, 0px));min-height:44px}
+  .modal{padding-bottom:calc(22px + env(safe-area-inset-bottom, 0px))}
+}
+@media(max-width:520px){
+  .services{grid-template-columns:1fr}
+  .service{min-height:150px}
+  .actions{align-items:stretch}
+  .actions>.btn{flex:1 1 100%;text-align:center}
+  .scene-label{left:12px;right:12px;bottom:12px;padding:11px 14px}
+}
+@media(prefers-reduced-motion:reduce){.project img{transition:none}}
