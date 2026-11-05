@@ -1,0 +1,30 @@
+name: Site tests
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  smoke-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: '22.x'
+
+      - name: Check JavaScript syntax
+        run: |
+          node --check server.js
+          node --check script.js
+          node --check scripts/smoke-test.mjs
+
+      - name: Test the website server and assets
+        run: node scripts/smoke-test.mjs
